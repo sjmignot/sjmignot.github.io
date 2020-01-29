@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title> dogsbody </title>
+  <link rel="stylesheet" href="/static/css/output.css">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="bg-gray-100">
+  <div class="m-auto w-full md:w-190">
+    <header class="header">
+      <!-- navbar -->
+      <nav class="top-0 font-semibold w-full ml-auto pb-4 pt-4 bg-gray-100">
+        <div class="flex-col font-header flex sm:flex-row">
+          <div class="mx-auto pl-6 justify-between flex flex-col flex-1 my-auto sm:mx-0 md:flex-row md:pl-0">
+            <a class="text-xl sm:text-2xl hover:underline hover:text-green " href="/posts">BLOG</a>
+            <div class="hidden md:block px-1 text-2xl">·</div>
+            <a class="mx-auto sm:mx-0 text-xl sm:text-2xl hover:underline hover:text-green " href="/backblog">BACKBLOG</a>
+          </div>
+          <div class="order-first mx-auto flex-none inline sm:order-none w-32 sm:mx-2 my-auto md:mx-6">
+            <a href="/posts">
+              <img class="w-full" src="/static/img/logo.svg" alt="Dogsbody logo" />
+            </a>
+            <div class="sm:hidden">
+              \>
+            </div>
+          </div>
+
+          <div class="mx-auto sm:mx-0 pr-6 flex flex-col flex-1 my-auto justify-between md:flex-row md:pr-0">
+              <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green " href="/about">ABOUT</a>
+              <div class="hidden md:block px-1 text-2xl">·</div>
+              <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green" href="#">SUBSCRIBE</a>
+          </div>
+      </div>
+      <hr class="-mt-6 mx-6 border-black border-2 sm:-mt-10 mb-6 md:mx-0"/>
+      <div class="flex ml-auto justify-end -mt-4 pr-6 md:pr-0">
+        <a class="flex-0 px-1" href="">
+          <div id="dice" class="-mt-3 -mr-3"></div>
+        </a>
+        <div class="px-1">/</div>
+        <a target="_blank" rel="noopener" class="flex-0 px-1" href="https://github.com/sjmignot">
+          <img class="w-full" src="/static/img/account-icons/github.svg" alt="Github Icon"/>
+        </a>
+        <a target="_blank" rel="noopener" class="flex-0 px-1" href="https://www.linkedin.com/in/samuel-mignot-43498199">
+          <img class="w-full" src="/static/img/account-icons/linkedin.svg" alt="LinkedIn Icon"/>
+        </a>
+      </div>
+      </nav>
+    </header>
+
+    <!-- content -->
+    <section class="content">
+      
+<div class="px-6 font-light leading-normal md:px-0 lg:px-0 xl:px-0">
+  <div class=mb-4>
+    <h1 class="font-posttitle text-2xl font-semibold text-center">SCARY, NO SCARY: GHOST SONGS FOR THE NOT QUITE DEAD</h1>
+    <div class="italic flex font-post justify-center font-light">
+      <div class="flex-0">jan. 08, 2020</div>
+      <div class="text-red flex-0 px-4"> · </div>
+      <div class="flex-0"> samuel mignot </div>
+      <div class="text-red flex-0 px-4"> · </div>
+      <div class="flex-0"> music</div>
+    </div>
+  </div>
+  <hr class="mx-auto w-1/3 border-black border-1 mb-4"/>
+<article class="post font-post leading-relaxed font-light">
+<p>This weeks playlist is ghost themed. The title draws inspiration from <a href="https://www.poetryfoundation.org/poets/zachary-schomburg">Zachary Schomburg</a>'s brilliant poem <em>Scary, No Scary</em>.</p>
+<div class="frame-wrap">
+<iframe src="https://open.spotify.com/embed/playlist/6ahal05QUid7ZpNTBfsG9g" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+
+<h2>1. Spooky Ghosts, SNCKPACK</h2>
+<p>The first song on the playlist, SNCKPACK's <em>Spooky Ghosts</em>, launched me on my ghost quest. The song is tender and heartwarming. Though, I have to admit I'm a sucker for ukulele riffs and tender lyrics.</p>
+<h2>2. Another Song About Ghosts, Joy Again</h2>
+<h2>3. Ghost Town, The Specials</h2>
+<h2>4. Ghosteen, Nick Cave &amp; the Bad Seeds</h2>
+<h2>5. Ghost Mouth, Girls</h2>
+<h2>6. Ghost Ship, Blur</h2>
+<h2>7. Henry (Acid Ghost Version), Soccer Mommy</h2>
+<h2>8. Living Ghost, Joy Again</h2>
+<div class="px-6 py-4">
+  
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#playlist</span>
+  
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#ghosts</span>
+  
+</div>
+</article>
+</div>
+
+    </section>
+  </div>
+  <footer class="fixed w-full bg-gray-900 text-white border-t-1 border-green">
+    <p class="py-4 text-center">dogsbody · a samuel mignot production · blogging for bipeds</p>
+  </footer>
+  <script>
+    var post_names = ['ghost-songs', 'andrei-rublev', 'elephant-sitting-still', 'in-the-mood-for-love', 'suede-songs', 'the-third-bank-of-the-river', 'chungking-express']
+    var post_name = post_names[Math.floor(Math.random()*post_names.length)];
+    window.onload = function() {
+      document.getElementById("dice").parentElement.href=`/post/${post_name}`;
+    }
+  </script>
+</body>
+</html>
