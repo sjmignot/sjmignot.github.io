@@ -1,4 +1,5 @@
 /*! purgecss start ignore */
+
 @tailwind base;
 @tailwind components;
 /*! purgecss end ignore */
@@ -11,7 +12,12 @@ html {
 }
 
 body {
-    flex: 1;
+  flex: 1;
+  counter-reset: figure;
+}
+
+::selection {
+  background: #00800066;
 }
 
 #dice {
@@ -21,7 +27,7 @@ body {
 }
 
 #dice::after {
-  content:'\2680';
+  content:'\2684';
   animation: rolling 4s linear infinite;
   animation-play-state: paused
 }
@@ -35,13 +41,18 @@ body {
     src: url(../fonts/KlinicSlabBook.otf);
 }
 
+@font-face {
+  font-family: 'Josefin Slab';
+  src: url(../fonts/JosefinSlab-Regular.ttf);
+}
+
 @keyframes rolling {
-  0% {content:'\2680';}
+  0% {content:'\2684';}
   20% {content:'\2683';}
   40% {content:'\2682';}
   60% {content:'\2685';}
-  80% {content:'\2684';}
-  100% {content:'\2683';}
+  80% {content:'\2681';}
+  100% {content:'\2680';}
 }
 
 /*! purgecss start ignore */
@@ -51,9 +62,14 @@ body {
   left: -40px;
 }
 
+.post p {
+  z-index: 10;
+}
+
 .post blockquote {
   position: relative;
-  font-size: 12px;
+  font-size: 14px;
+  font-family: Courier;
   font-style: italic;
   display: block;
   border-left: 5px solid #21610B;
@@ -61,9 +77,10 @@ body {
   border-right: 2px dashed #21610B;
   margin: 0 0 1.5em;
   background: aliceblue;
+  z-index: 10;
 }
 
-blockquote::before {
+.post blockquote::before {
   position: absolute;
   font-size: 62px;
   font-family: 'Courier';
@@ -74,9 +91,21 @@ blockquote::before {
   left: 2px;
 }
 
+.post blockquote cite {
+  position: relative;
+  left: 5px;
+  top: 5px;
+  font-size: 12px;
+}
+
 .post img {
   @apply w-full;
-  margin-bottom: 1rem;
+  padding: 5px;
+  background: black;
+}
+
+.post video {
+  @apply w-full;
   padding: 5px;
   background: black;
 }
@@ -87,16 +116,46 @@ img[src*='#center'] {
     margin: auto;
     width: 256px;
 }
+
+img[src*='#block'] {
+  display: block;
+  width: auto;
+  background: none;
+  padding: none;
+  opacity: 40%;
+}
+
 /* purgecss end ignore */
 
 .frame-wrap {
-  margin-bottom: 1rem;
-  padding: 5px;
-  background: black;
+  margin: 5px 0 5px 5px;
+  border: black 4px solid;
 }
 
 .post h2 {
   @apply font-postheader pb-4 text-2xl;
+}
+
+.post .header-link-padding {
+  display: block;
+  content: "";
+  margin-top: -7rem;
+  height: 7rem;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.post .footnote-ref:before {
+    display: block;
+    content: "";
+    margin-top: -12rem;
+    height: 12rem;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.post .footnote-ref {
+  display: inline-block;
 }
 
 .post a {
@@ -108,7 +167,7 @@ img[src*='#center'] {
 }
 
 .post > p {
-  @apply pb-4
+  @apply pb-4 z-10;
 }
 
 .post-link {
@@ -116,6 +175,108 @@ img[src*='#center'] {
 }
 
 .post h3 {
-  @apply font-postheader pb-4 text-xl;
+  @apply font-postheader pb-4 text-xl z-10;
+}
+
+.post ul {
+ @apply list-disc;
+ text-indent: 1rem;
+}
+
+.header-link {
+  left: -20px;
+}
+
+progress {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  /* Dimensions */
+  width: 100%;
+  height: 5px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
+
+  /* Progress bar value for IE10+ */
+  color: #0F493F;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: #0F493F;
+}
+
+progress::-moz-progress-bar {
+  background-color: #0F493F;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  display: block;
+}
+
+.progress-bar {
+  background-color: #0F493F;
+  width: 0%;
+  display: block;
+  height: inherit;
+}
+
+.date-indicator {
+  left: 90%;
+  font-size: x-large;
+}
+
+.transition-linear {
+  transition-timing-function: linear;
+}
+
+.transition-ease {
+  transition: all .2s ease-out;
+}
+
+.post img + em {
+  @apply text-base text-gray-500;
+  text-transform: lowercase;
+}
+
+.post img + em:before {
+  counter-increment: figure;
+  content: "figure " counter(figure) ". ";
+  @apply font-bold;
+}
+
+.post video + em {
+  @apply text-base text-gray-500;
+  text-transform: lowercase;
+}
+
+.post video + em:before {
+  counter-increment: figure;
+  content: "figure " counter(figure) ". ";
+  @apply font-bold;
+}
+
+.footnote {
+  @apply text-xs;
 }
 /*! purgecss end ignore */

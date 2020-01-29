@@ -8,49 +8,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="bg-gray-100">
-  <div class="m-auto w-full md:w-190">
-    <header class="header">
-      <!-- navbar -->
-      <nav class="top-0 font-semibold w-full ml-auto pb-4 pt-4 bg-gray-100">
-        <div class="flex-col font-header flex sm:flex-row">
-          <div class="mx-auto pl-6 justify-between flex flex-col flex-1 my-auto sm:mx-0 md:flex-row md:pl-0">
-            <a class="text-xl sm:text-2xl hover:underline hover:text-green " href="/posts">BLOG</a>
+
+  <progress class="z-50" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+  <header class="w-full mx-auto md:w-190 pointer-events-none header sticky top-0 z-40">
+    <!-- navbar -->
+    <nav class="top-0 font-semibold w-full ml-auto">
+      <div class="pointer-events-auto bg-gray-100 sm:bg-transparent flex-col font-header flex sm:flex-row">
+        <div class="w-24 h-16 flex mx-auto bg-gray-100 sm:order-none sm:w-32 sm:h-24">
+          <a href="/posts">
+            <img class="w-full" src="/static/img/logo.svg" alt="Dogsbody logo" />
+          </a>
+        </div>
+
+        <div class="md:pr-6 sm:pr-2 bg-gray-100 nav-content hidden pb-4 sm:pt-2 md:pt-10 sm:pl-6 justify-between sm:order-first sm:flex flex-col flex-1 sm:mx-0 md:flex-row md:pl-0">
+          <a class="text-xl sm:text-2xl hover:underline hover:text-green " href="/posts">BLOG</a>
+          <div class="hidden md:block px-1 text-2xl">·</div>
+          <a class="sm:mx-0 text-xl sm:text-2xl hover:underline hover:text-green " href="/backblog">BACKBLOG</a>
+        </div>
+
+        <div class="md:pl-6 sm:pl-2 bg-gray-100 nav-content hidden pb-4 sm:pt-2 md:pt-10 sm:mx-0 sm:pr-6 sm:flex flex-col flex-1 justify-between md:flex-row md:pr-0">
+            <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green " href="/about">ABOUT</a>
             <div class="hidden md:block px-1 text-2xl">·</div>
-            <a class="mx-auto sm:mx-0 text-xl sm:text-2xl hover:underline hover:text-green " href="/backblog">BACKBLOG</a>
-          </div>
-          <div class="order-first mx-auto flex-none inline sm:order-none w-32 sm:mx-2 my-auto md:mx-6">
-            <a href="/posts">
-              <img class="w-full" src="/static/img/logo.svg" alt="Dogsbody logo" />
-            </a>
-            <div class="sm:hidden">
-              \>
-            </div>
-          </div>
-
-          <div class="mx-auto sm:mx-0 pr-6 flex flex-col flex-1 my-auto justify-between md:flex-row md:pr-0">
-              <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green " href="/about">ABOUT</a>
-              <div class="hidden md:block px-1 text-2xl">·</div>
-              <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green" href="#">SUBSCRIBE</a>
-          </div>
-      </div>
-      <hr class="-mt-6 mx-6 border-black border-2 sm:-mt-10 mb-6 md:mx-0"/>
-      <div class="flex ml-auto justify-end -mt-4 pr-6 md:pr-0">
-        <a class="flex-0 px-1" href="">
-          <div id="dice" class="-mt-3 -mr-3"></div>
-        </a>
-        <div class="px-1">/</div>
-        <a target="_blank" rel="noopener" class="flex-0 px-1" href="https://github.com/sjmignot">
-          <img class="w-full" src="/static/img/account-icons/github.svg" alt="Github Icon"/>
-        </a>
-        <a target="_blank" rel="noopener" class="flex-0 px-1" href="https://www.linkedin.com/in/samuel-mignot-43498199">
-          <img class="w-full" src="/static/img/account-icons/linkedin.svg" alt="LinkedIn Icon"/>
-        </a>
-      </div>
-      </nav>
-    </header>
-
+            <a class="text-right text-xl sm:text-2xl hover:underline hover:text-green" href="/subscribe">SUBSCRIBE</a>
+        </div>
+    </div>
+    <hr class="z-50 mx-6 border-black mb-2 border-2 md:mx-0"/>
+    <div class="flex ml-auto justify-end pr-6 md:pr-0">
+      <div class="padding-div flex-1"></div>
+      <a class="pointer-events-auto flex-0 px-1" href="">
+        <div id="dice" class="-mt-3 -mr-3 hover:text-green"></div>
+      </a>
+      <div class="px-1">/</div>
+      <a target="_blank" rel="noopener" class="pointer-events-auto flex-0 px-1" href="https://github.com/sjmignot">
+        <svg class="w-full text-green hover:stroke-current" role="img" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <title>Github icon</title>
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </a>
+      <a target="_blank" rel="noopener" class="pointer-events-auto flex-0 px-1" href="https://www.linkedin.com/in/samuel-mignot-43498199">
+        <svg class="w-full text-green hover:stroke-current" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+    </div>
+    </nav>
+  </header>
+  <div class="m-auto w-full md:w-190 flex flex-col h-full">
     <!-- content -->
-    <section class="content">
+    <section class="z-0 content flex-1">
       
 <div class="px-6 font-light leading-normal md:px-0 lg:px-0 xl:px-0">
   <div class=mb-4>
@@ -65,21 +76,60 @@
   </div>
   <hr class="mx-auto w-1/3 border-black border-1 mb-4"/>
 <article class="post font-post leading-relaxed font-light">
-<p>This weeks playlist is ghost themed. The title draws inspiration from <a href="https://www.poetryfoundation.org/poets/zachary-schomburg">Zachary Schomburg</a>'s brilliant poem <em>Scary, No Scary</em>.</p>
-<div class="frame-wrap">
-<iframe src="https://open.spotify.com/embed/playlist/6ahal05QUid7ZpNTBfsG9g" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<div class="frame-wrap mx-auto sm:float-right">
+<iframe src="https://open.spotify.com/embed/playlist/6ahal05QUid7ZpNTBfsG9g" width="100%" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
 
-<h2>1. Spooky Ghosts, SNCKPACK</h2>
+<p>This weeks playlist is ghost themed. The title draws inspiration from <a href="https://www.poetryfoundation.org/poets/zachary-schomburg">Zachary Schomburg</a>'s brilliant poem <em>Scary, No Scary</em>.</p>
+<div class="header-link-padding" id="spooky-ghosts-snckpack"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#spooky-ghosts-snckpack">#</a>Spooky Ghosts, SNCKPACK</h2>
 <p>The first song on the playlist, SNCKPACK's <em>Spooky Ghosts</em>, launched me on my ghost quest. The song is tender and heartwarming. Though, I have to admit I'm a sucker for ukulele riffs and tender lyrics.</p>
-<h2>2. Another Song About Ghosts, Joy Again</h2>
-<h2>3. Ghost Town, The Specials</h2>
-<h2>4. Ghosteen, Nick Cave &amp; the Bad Seeds</h2>
-<h2>5. Ghost Mouth, Girls</h2>
-<h2>6. Ghost Ship, Blur</h2>
-<h2>7. Henry (Acid Ghost Version), Soccer Mommy</h2>
-<h2>8. Living Ghost, Joy Again</h2>
-<div class="px-6 py-4">
+<blockquote>
+<p>Lets put the bedsheets over our heads.<br />
+We'll be spooky ghosts together, in our beds.</p>
+</blockquote>
+<div class="header-link-padding" id="another-song-about-ghosts-joy-again"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#another-song-about-ghosts-joy-again">#</a>Another Song About Ghosts, Joy Again</h2>
+<p>Joy Again is quickly becoming one of my favorite bands. After hearing them open for Rostam in SF, their songs have been following me.</p>
+<blockquote>
+<p>I treat my body like shit, but I have nothing to lose<br />
+Except my physical form which I barely use</p>
+</blockquote>
+<p>Witty, sarcastic, absurd, lyrically sound, tender, I believe Joy Again is going to keep doing great things!</p>
+<div class="header-link-padding" id="ghost-town-the-specials"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#ghost-town-the-specials">#</a>Ghost Town, The Specials</h2>
+<p>Obviously, <strong>Ghost Town</strong> is a ghost-themed playlist requirement. This special Special's hit moves smoothly between unique and diverse passages.</p>
+<blockquote>
+<p>Why must the youth fight against themselves?<br />
+Government leaving the youth on the shelf</p>
+</blockquote>
+<div class="header-link-padding" id="ghosteen-nick-cave-the-bad-seeds"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#ghosteen-nick-cave-the-bad-seeds">#</a>Ghosteen, Nick Cave &amp; the Bad Seeds</h2>
+<p>Haunting yet spiritual. Visceral but tender. Although undeniably dark, Cave's music is aglow with something more: a yearning to be free, to be happy. An obsidian radiance that grows in the darkness, stronger for it. His album Ghosteen, its title song, seem the high tide of a hope long dormant in Cave's work.</p>
+<blockquote>
+<p>This world is beautiful<br />
+Held within it's stars</p>
+</blockquote>
+<div class="header-link-padding" id="ghost-ship-blur"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#ghost-ship-blur">#</a>Ghost Ship, Blur</h2>
+<p>Off of Blur's latest album <em>The Magic Whip</em>, Ghost Ship has a beautiful underlying rhythm. Nothing seems fixed in the foreground or background of the song: rather, everything seems to weave in and out.</p>
+<blockquote>
+<p>I got away for a little while<br />
+But then it came back much harder</p>
+</blockquote>
+<div class="header-link-padding" id="ghost-song-jim-morrison"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#ghost-song-jim-morrison">#</a>Ghost Song, Jim Morrison</h2>
+<p>Releasesd posthumously on The Doors final album <em>An American Prayer</em>, Ghost Song is a brilliant example of Morrison's stunning songwriting:</p>
+<blockquote>
+<p>Awake.<br />
+Shake dreams from your hair<br />
+my pretty child, my sweet one.<br />
+Choose the day and choose the sign of your day<br />
+the day's divinity<br />
+First thing you see.</p>
+</blockquote>
+<div class="header-link-padding" id="living-ghost-joy-again"></div><h2 class="group relative z-0"><a class="header-link absolute opacity-0 group-hover:opacity-100 pin-l pin-t transition-ease" href="#living-ghost-joy-again">#</a>Living Ghost, Joy Again</h2>
+<p>Another song about ghosts by joy again, Living Ghost has a lo-fi sound, but is all the better for it. Lyrical decisions, such as the pluralization of sky so that it rhymes with rise, add a rawness to their sound that resolves into a kind of emotional honesty.</p>
+<blockquote>
+<p>will the sun rise<br />
+up in the skies<br />
+just to shortly return.</p>
+</blockquote>
+<div class="py-4">
   
     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#playlist</span>
   
@@ -88,18 +138,32 @@
 </div>
 </article>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/static/js/gifs.js"></script>
+<script src="/static/js/progress.js"></script>
+
 
     </section>
   </div>
-  <footer class="fixed w-full bg-gray-900 text-white border-t-1 border-green">
+  <footer class="w-full bg-gray-900 text-white border-t-1 border-green pin-b">
     <p class="py-4 text-center">dogsbody · a samuel mignot production · blogging for bipeds</p>
   </footer>
+  
   <script>
-    var post_names = ['ghost-songs', 'andrei-rublev', 'elephant-sitting-still', 'in-the-mood-for-love', 'suede-songs', 'the-third-bank-of-the-river', 'chungking-express']
+    var post_names = ['the-lighthouse', 'ghost-songs', 'andrei-rublev', 'in-the-mood-for-love', 'suede-songs', 'an-elephant-sitting-still', 'the-third-bank-of-the-river']
     var post_name = post_names[Math.floor(Math.random()*post_names.length)];
     window.onload = function() {
       document.getElementById("dice").parentElement.href=`/post/${post_name}`;
     }
+
+    var open = false;
+    document.getElementById('nav-toggle').onclick = function(){
+      Array.from(document.getElementsByClassName("nav-content")).forEach(
+        function(element, index, array) {
+          element.classList.toggle("hidden");
+        }
+      );
+    }
   </script>
-</body>
+ </body>
 </html>
