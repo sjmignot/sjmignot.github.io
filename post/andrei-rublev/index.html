@@ -158,7 +158,6 @@ Therefore one of the aims of our work was to reconstruct for a modern audience t
 </article>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/static/js/gifs.js"></script>
 <script src="/static/js/progress.js"></script>
 
 
@@ -173,15 +172,6 @@ Therefore one of the aims of our work was to reconstruct for a modern audience t
     var post_name = post_names[Math.floor(Math.random()*post_names.length)];
     window.onload = function() {
       document.getElementById("dice").parentElement.href=`/post/${post_name}`;
-    }
-
-    var open = false;
-    document.getElementById('nav-toggle').onclick = function(){
-      Array.from(document.getElementsByClassName("nav-content")).forEach(
-        function(element, index, array) {
-          element.classList.toggle("hidden");
-        }
-      );
     }
   </script>
  </body>
