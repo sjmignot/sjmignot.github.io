@@ -70,8 +70,7 @@ body {
 .post blockquote {
   position: relative;
   font-size: 14px;
-  font-family: Courier;
-  font-style: italic;
+  font-family: "Courier";
   display: block;
   border-left: 5px solid #21610B;
   padding: 1.5em 1.5em 1.5em 3.5em;
@@ -112,6 +111,15 @@ body {
 }
 
 /* purgecss start ignore */
+img[src*='#float-round'] {
+    display: block;
+    float: right;
+    width: 256px;
+    shape-outside: inset(1% round 50%);
+    margin: 10px;
+    @apply rounded-full;
+}
+
 img[src*='#center'] {
     display: block;
     margin: auto;
@@ -158,7 +166,7 @@ img[src*='#block'] {
 }
 
 .post a {
-  @apply text-blue;
+  @apply text-blue-500;
 }
 
 .post a:hover {
@@ -167,6 +175,14 @@ img[src*='#block'] {
 
 .post > p {
   @apply pb-4 z-10;
+}
+
+.post ul > li:first-child {
+  @apply -mt-4;
+}
+
+.post ul > li:last-child {
+  @apply pb-4;
 }
 
 .post-link {
@@ -278,4 +294,92 @@ progress::-moz-progress-bar {
 .footnote {
   @apply text-xs;
 }
+
+.poem {
+  font-size: 1em;
+  padding: 2rem;
+  background: black;
+  color: white;
+  border-radius: 5%;
+  margin-bottom: 1rem;
+}
+
+.landing-page{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "name         name    name         name"
+      "about        about   about        about"
+      "latest-post  latest-post   latest-post  latest-post"
+      "left-cats    left-cats     right-cats    right-cats"
+      "arrow        arrow arrow arrow";
+}
+
+@screen md {
+.landing-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows   : auto auto auto auto;
+    /* box-shadow           : 0 5px 9px 0 rgba(0, 0, 0, 0.35); */
+    grid-template-areas:
+        "name           name          name          name"
+        "latest-post    latest-post   latest-post   about"
+        "left-cats       left-cats      right-cats     right-cats"
+        "arrow          arrow         arrow         arrow";
+  }
+}
+
+.grid-area {
+    padding: 1rem 1rem 1rem 1rem;
+    /* border : 1px black solid; */
+}
+
+.name {
+    grid-area: name;
+    @apply -mt-12 pt-16 pr-2;
+}
+
+.about {
+    grid-area: about;
+    position: relative;
+    hyphens: auto;
+}
+
+@screen md {
+  .about::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 102%;
+    @apply border-b-8 border-gray-100;
+  }
+}
+
+.latest-post {
+    grid-area: latest-post;
+    hyphens: auto;
+}
+
+/* .latest-post::before { */
+/*   content: "Latest Post"; */
+/*   position: absolute; */
+/*   left: 50%; */
+/*   transform: translateX(-50%); */
+/* } */
+
+.left-cats{
+    grid-area: left-cats;
+}
+
+.right-cats{
+    grid-area: right-cats;
+}
+
+.arrow {
+    grid-area: arrow;
+    padding-top: 0;
+}
+
 /*! purgecss end ignore */
