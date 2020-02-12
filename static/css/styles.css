@@ -13,6 +13,21 @@ html {
     display: flex;
 }
 
+.epigraph {
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  font-style: italic;
+}
+
+.epigraph cite {
+  position: relative;
+  left: 2rem;
+  top: 5px;
+  font-size: 12px;
+  font-style: normal;
+}
+
 body {
   flex: 1;
   counter-reset: figure;
@@ -46,6 +61,11 @@ body {
 @font-face {
   font-family: 'Josefin Slab';
   src: url(../fonts/JosefinSlab-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url(../fonts/IBMPlexSans-Light.woff2);
 }
 
 @keyframes rolling {
@@ -134,6 +154,20 @@ img[src*='#block'] {
   opacity: .4;
 }
 
+.photo img {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+
+}
+
+.photo img + em {
+  @apply text-base text-gray-500;
+  text-transform: lowercase;
+}
+
 .frame-wrap {
   margin: 5px 0 5px 5px;
   border: black 4px solid;
@@ -143,7 +177,7 @@ img[src*='#block'] {
   @apply font-postheader pb-4 text-2xl;
 }
 
-.post .header-link-padding {
+.header-link-padding {
   display: block;
   content: "";
   margin-top: -7rem;
@@ -193,9 +227,9 @@ img[src*='#block'] {
   @apply font-postheader pb-4 text-xl z-10;
 }
 
-.post ul {
+ul {
  @apply list-disc;
- text-indent: 1rem;
+ text-indent: 1.1rem;
 }
 
 .header-link {
@@ -293,15 +327,6 @@ progress::-moz-progress-bar {
 
 .footnote {
   @apply text-xs;
-}
-
-.poem {
-  font-size: 1em;
-  padding: 2rem;
-  background: black;
-  color: white;
-  border-radius: 5%;
-  margin-bottom: 1rem;
 }
 
 .landing-page{
@@ -409,5 +434,9 @@ progress::-moz-progress-bar {
 
 .center-hover-underline:hover {
   background-size: 100% 2px, auto;
+}
+
+.poem p {
+  text-indent: 1rem;
 }
 /*! purgecss end ignore */
