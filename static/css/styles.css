@@ -33,10 +33,6 @@ body {
   counter-reset: figure;
 }
 
-::selection {
-  background: #00800066;
-}
-
 #dice {
   font-size: 30px;
   font-weight: 100;
@@ -137,7 +133,8 @@ img[src*='#float-round'] {
     width: 256px;
     shape-outside: inset(1% round 50%);
     margin: 10px;
-    @apply rounded-full;
+    @apply rounded-full border-2 p-0;
+    background: none;
 }
 
 img[src*='#center'] {
