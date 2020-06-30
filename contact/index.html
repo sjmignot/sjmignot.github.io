@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="lQcj_VfrLnJc8g0N-Lz1sgBByIm2-6nkMy2_CsWRk0Q" />
-  <meta name="description" content=" Samuel Mignot's Personal Site ">
+  <meta name="description" content="">
 </head>
 <body>
   <progress class="z-50" value="0">
@@ -26,10 +26,10 @@
 			</div>
 			<div class="nav-item__wrapper">
 			  <a class="center-hover-underline nav-item " href="/posts">posts</a>
-			  <a class="center-hover-underline nav-item " href="/contact">contact</a>
+			  <a class="center-hover-underline nav-item  active" href="/contact">contact</a>
 			</div> 
 			<div class="nav-item__wrapper">
-				<a class="center-hover-underline nav-item " href="/projects">projects</a>
+				<a class="center-hover-underline nav-item active" href="/projects">projects</a>
 				<a class="center-hover-underline nav-item " href="/about">about</a>
 			</div>
 		</div>
@@ -54,41 +54,31 @@
   <!-- content -->
   <section class="section__wrapper">
     
-  <article class="landing-page">
-      <section class="landing-page__section name">
-        <h1 class="name-section__name"> DOGSBODY </h1>
-		<div class="author__wrapper">
-			<a class="name-section__author fade-underline" href="/about">samuel mignot</a>
+  <h1 class="page__title"> CONTACT </h1>
+  <div class="page__wrapper">
+      <form
+		  class="contact__form"
+		  action="https://formspree.io/mrgyagyo"
+		  method="POST"
+		>
+		  <div class="form__name-wrapper">
+			  <label class="form-label__name form-label__name--first"> FIRST NAME <input class="form-input__name form-input__name--last " type="text" name="first-name" onkeypress="birdSings()">
+			  </label>
+
+			  <label class="form-label__name form-label__name--last"> LAST NAME <input class="form-input__name form-input__name--last" type="text" name="last-name" onkeypress="birdSings()">
+			  </label>
+		  </div>
+		  <label class="form-label__email"> EMAIL <input class="form-input__email" type="email" name="_replyto" required onkeypress="birdSings()">
+		  </label>
+		  <label class="form-label__message"> MESSAGE <textarea class="form-input__message" rows="8" name="message" required minlength="40" onkeypress="birdSings()"></textarea>
+		  </label>
+		  <input type="text" name="_gotcha" style="display:none" />
+		  <input class="form__submit-button"type="submit" value="submit" onkeypress="birdSings()"/>
+		</form>
+		<div class="contact-page__image-wrapper">
+			<img class="contact-page__image" src="/static/img/birb.svg"></img>
 		</div>
-        <div class="name-section__image-wrapper">
-          <img class="name-section__image" alt="Picture of the young man as a young man" src="../../static/img/me.jpg">
-        </div>
-      </section>
-      <section class="landing-page__section about">
-        <p class="about__description">Coder, writer, and artist with experience in technical writing, data analysis, web scraping, machine learning, and web design. Curious, driven, and constantly inspired to learn and create.</p>
-      </section>
-      <section class="landing-page__section latest-post">
-          <a class="latest-post__title" href="/posts/an-elephant-sitting-still/">An Elephant Sitting Still: redemptive beauty and fault...</a><p class="latest-post__preview">The film is 4 hours long. I watched it at the Brady Theater. When it was over, everyone sat watching the credits. I watched the film at 8pm and got out of the theater at midnight. It was raining lightly and my phone was dead.  I knew the general direction I needed to travel to get home, but Paris is...</p>
-        </h2>
-      </section>
-      <section class="landing-page__section cats left-cats">
-          <a class="animated-hover" href="/projects#poetry"> POETRY </a>
-          <a class="animated-hover" href="/projects#fiction"> FICTION </a>
-      </section>
-      <section class="landing-page__section cats right-cats">
-    	<a class="animated-hover" href="/projects#coding"> CODING </a>
-          <a class="animated-hover" href="/projects#photos"> PHOTOS </a>
-      </section>
-      <section class="landing-page__section arrow">
-		<svg width="60px" height="36px" viewBox="0 0 60 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-				<g id="Mobile" transform="translate(-132.000000, -362.000000)" stroke="#E2E8F0" stroke-width="2">
-					<path d="M162,396 C162,374 162,363 162,363 C162,363 153,363 135,363 L162,396 L189,363 L162,363" id="Path-3"></path>
-				</g>
-			</g>
-		</svg>
-      </section>
-  </article>
+	</div>
 
   </section>
   <footer class="footer">
@@ -99,5 +89,7 @@
     <p class="font-posttitle py-2 text-center">dogsbody · a samuel mignot production · blogging for bipeds</p>
   </footer>
   
+	<script src="/static/js/birdSong.js"></script>
+
  </body>
 </html>
